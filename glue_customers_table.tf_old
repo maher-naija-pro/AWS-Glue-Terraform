@@ -1,0 +1,94 @@
+resource "aws_glue_catalog_table" "aws_glue_catalog_table" {
+  name          =  format(
+        "%s-%s-customers",
+        var.project_name,
+        var.platforme_name,
+      )
+  database_name =  format(
+        "%s-%s-customers",
+        var.project_name,
+        var.platforme_name,
+      )
+
+#catalog_id =
+#description =
+#owner =
+#retention =
+#view_expanded_text =
+#view_original_text =
+#table_type = "EXTERNAL_TABLE"
+#
+#
+#partition_index {
+#     index_name =
+#     keys       = 
+#
+#}
+partition_keys {
+  name    = "dataload"
+  type    = "smallint"
+}
+#
+#target_table {
+#  catalog_id=
+#  database_name=  
+#  name=
+#}
+#
+#parameters = {
+#    EXTERNAL              = "TRUE"
+#    "parquet.compression" = "SNAPPY"
+#  }
+#
+storage_descriptor {
+#    compressed    =  
+#    number_of_buckets = 
+     location      = "s3://maher-glue-test/data/customers_database/customers_csv/"
+#    input_format  = "org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat"
+#    output_format = "org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat"
+#
+
+#    ser_de_info {
+#      name                  = "my-stream"
+#      serialization_library = "org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe"
+#
+#      parameters = {
+#        "serialization.format" = 1
+#      }
+#    }
+#     schema_reference {
+#             schema_id {
+#               registry_name
+#               schema_arn
+#               schema_name
+#             }
+#        schema_version_id =
+#        schema_version_number =
+#     }
+#     skewed_info {
+#         skewed_column_names=
+#         skewed_column_value_location_maps=
+#         skewed_column_values=
+#        }
+#     sort_columns {
+#         column
+#         sort_order
+#     }
+#
+#     stored_as_sub_directories {
+#
+#     }
+    columns {
+      #parameters =
+      name = "customer_id"
+      type = "smallint"
+    }
+    columns {
+     # parameters =
+      name = "name_style"
+      type = "boolean"
+    }
+
+  }
+}
+
