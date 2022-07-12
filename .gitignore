@@ -1,0 +1,28 @@
+# Local .terraform directories
+**/.terraform/*
+
+#set aksk scripts
+
+set_aksk.sh
+# .tfstate files
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+terraform.tfstate_old
+# Crash log files
+crash.log
+
+# Sensitive and local-only tfvars
+backend.tfvars
+*.auto.tfvars
+
+# Outputs (they have a meaning only after running a refresh, so keep them local)
+outputs/*
+!outputs/.keep
+
+# Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
+*tfplan*
+
+# Ignore temporary and swap files.
+.*.swp
+
