@@ -20,15 +20,8 @@ Terraform example for glue crawler and jobs
 ## Getting Started
 ---
 To get started, follow these steps:
-1. : What to do
-   
-   `cmd`
-   // Insert code example here
-   
-3. : What to do
-   
-   `cmd`
-
+1. : terrafrom apply
+2. 
 ## License
 ---
 This project is licensed under the [MIT License](LICENSE).
